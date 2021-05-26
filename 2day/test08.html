@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        #wrap {
+            width: 700px;
+            margin: 0 auto;
+            border: 1px solid #333;
+        }
+        #header {
+            background-color: skyblue;
+            height: 100px;
+        }
+        #header h1 {
+            text-align: center;
+            padding: 10px 0;
+        }
+        .menu {
+            list-style: none;
+            width: 520px;
+            margin: 0 auto;
+        }
+        .menu li {
+            float: left;
+            width: 120px;
+            height: 30px;
+            background-color:greenyellow;
+            text-align: center;
+            line-height: 30px;
+            font-size: 12px;
+            margin: 0 5px;
+        }
+        .menu li :hover {
+            background-color: fuchsia;
+        }
+        .menu li a {
+            color: blueviolet;
+            text-decoration: none;
+        }
+        #content {
+            background-color: snow;
+            overflow: hidden;
+        }
+        #content .left {
+            width: 200px;
+            padding: 20px;
+            background-color: chocolate;
+            float: left;
+        }
+        #content .right {
+            width: 400px;
+            padding: 20px;
+            background-color: darkcyan;
+            float: right;
+        }
+        #content p {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #333;
+            margin: 10px 0;
+        }
+        #content h2 {
+            font-size: 18px;
+            text-decoration: underline;
+            letter-spacing: 10px;
+            text-align: center;
+        }
+        #footer {
+            background-color: slateblue;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>LOGO</h1>
+            <ul class="menu">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div class="left">
+                <h2>subBanner</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Autem, quisquam adipisci a,
+                      perspiciatis incidunt dolore quae nisi nulla at
+                       blanditiis iste qui architecto quo mollitia rem odit 
+                       impedit sed magnam.
+                    </p>
+            </div>
+            <div class="right"> 
+                <h2>mainMenu</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Autem, quisquam adipisci a,
+                      perspiciatis incidunt dolore quae nisi nulla at
+                       blanditiis iste qui architecto quo mollitia rem odit 
+                       impedit sed magnam.
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Autem, quisquam adipisci a,
+                      perspiciatis incidunt dolore quae nisi nulla at
+                       blanditiis iste qui architecto quo mollitia rem odit 
+                       impedit sed magnam.
+                    </p>
+            </div>
+        </div>
+        <div id="footer">
+            <p>copyright.</p>
+        </div>
+    </div>
+</body>
+</html>

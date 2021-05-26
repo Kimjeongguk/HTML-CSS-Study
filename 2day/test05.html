@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* block 한줄에 하나 */
+        body {
+            text-align: center;
+        }
+        #wrap {
+            border: 2px solid red;
+            background-color: yellow;
+            
+        }
+        .inner {
+            overflow: hidden;
+            width: 800px;
+            margin: 0 auto;
+        }
+        #wrap .inner div {
+            width: 200px;
+            height: 200px;
+            background-color: silver;
+            display: inline-block;
+            float: left;
+            padding: 5px;
+            border: 2px solid red;
+            box-sizing: border-box;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="inner">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+            <div class="box4">box4</div>
+        </div>
+    </div>
+</body>
+</html>
