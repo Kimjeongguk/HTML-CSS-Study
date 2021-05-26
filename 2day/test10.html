@@ -13,7 +13,8 @@
           background-image: url(/images/apple02.jpg);
           background-size: cover;
           /* padding-top: 136px; */
-          border: 1px solid transparent;
+          /* border: 1px solid transparent; */
+          overflow: hidden;
           box-sizing: border-box;
         }
         .bg {
@@ -28,9 +29,32 @@
             color: orange;
         }
         #content {
-
+            border: 1px solid #333;
         }
-      
+        #content h2 {
+            text-align: center;
+        }
+        #content h3 {
+            color: red;
+            text-decoration: underline;
+        }
+        #content div {
+            padding: 10px 20px;
+        }
+        #content div ul {
+            font-size: 14px;
+            line-height: 2;
+        }
+        .box1 {
+            border-bottom: 1px solid #333;
+        }
+        .box2 {
+            border-bottom: 1px solid #333;
+        }
+        .blue{
+            color: blue;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -45,13 +69,14 @@
             </div>
         </div>
         <div id="content">
-            <div class="box1"></div>
+            <div class="box1">
                 <h2>확인하세요</h2>
                 <h3>주문 및 배송</h3>
                 <ul>
-                    <li>오후 2시 이전 주문건은 당일 방송합니다.</li>
+                    <li>오후 2시 이전 주문건은 <span class="blue">당일 발송</span>합니다.</li>
                     <li>2시 이후 주문건은 다음날 방송합니다.</li>
                 </ul>
+            </div>
             <div class="box2">
                 <h3>교환 및 환불</h3>
                 <ul>
@@ -59,11 +84,11 @@
                     <li>고객센터로 전화주세요</li>
                 </ul>
             </div>
-            <div class="box3"></div>
+            <div class="box3">
                 <h3>고객센터</h3>
                 <ul>
                     <li>02-000-0000</li>
-                    <li>상담시간: 오전 9시 ~ 오후 6시</li>
+                    <li>상담시간: <span class="blue">오전 9시 ~ 오후 6시</span></li>
                 </ul>
             </div>
         </div>
