@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        #wrap {
+            width: 700px;
+            margin: 0 auto;
+        }
+        header {
+            border: 1px solid red;
+            padding: 10px;
+        }
+        #content {
+            margin: 10px 0;
+            /* overflow: hidden; */
+            position: relative;
+        }
+        /* #content::before {
+            content: "안녕"
+        } */
+        #content::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #content aside {
+            border: 1px solid red;
+            padding: 10px;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        #content .menu {
+            border: 1px solid blue;
+            width: 100%;
+            height: 120px;
+            position: relative;
+
+        }
+        #content section {
+            border: 1px solid red;
+            padding: 10px;
+            width: 440px;
+            height: 300px;
+            float: right;
+        }
+        #content section div {
+            width: 100%;
+            height: 100px;
+            border: 1px solid green;
+        }
+        #content section .con1 {
+            margin-bottom: 10px;
+        }
+        footer {
+            border: 1px solid red;
+            padding: 10px;
+            /* clear: both; */
+        }
+        .banner {
+            background-color: red;
+            color: #fff;
+            width: 100px;
+            height: 200px;
+            position: absolute;
+            right: -120px;
+            top: 0;
+        }
+        .top {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            position: fixed;
+            right: 20px;
+            bottom: 10px;
+
+        }
+        .top a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -5px;
+            margin-top: -5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>상단</h1>
+        </header>
+        <div id="content">
+            <aside>
+                <h2>좌측단</h2>
+                <div class="menu">menu
+                    <div class="dot"></div>
+                </div>
+            </aside>
+            <section>
+                <h2>본문단</h2>
+                <div class="con1">content01</div>
+                <div class="con2">content02</div>
+            </section>
+            <div class="banner">바로가기</div>
+            <!-- clear: both; 가생김 after 쓰면 -->
+        </div>
+        <footer>
+            <h3>하단 카피단</h3>
+        </footer>
+    </div>
+    <div class="top"><a href="#wrap">TOP</a></div>
+</body>
+</html>

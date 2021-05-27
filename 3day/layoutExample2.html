@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout3</title>
+    <style>
+        #wrap {
+            margin: 0 auto;
+            width: 800px;
+            border: 1px solid red;
+        }
+        header {
+
+        }
+        header h1 {
+            /* text-transform: lowercase; */
+            border: 1px solid red;
+        }
+        header nav {
+        }
+        .gnb {
+            list-style: none;
+            padding: 0;
+            background-color: #ddd;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .gnb::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .gnb li {
+            float: left;
+            margin: 0 20px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        .gnb li a {
+            text-decoration: none;
+            color: #333;
+        }
+        #content {
+            border: 1px solid red;
+        }
+        #content::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #content section {
+            border: 1px solid red;
+            width: 500px;
+            padding: 10px;
+            float: left;
+        }
+        #content section h2 {
+            border: 1px solid red;
+            text-transform: capitalize;
+            /* border-bottom: 1px solid #ccc; */
+            padding-bottom: 10px;
+            margin-bottom: 0px;
+        }
+        #content section p {
+            width: 48%;
+        }
+        .text {
+            border: 1px solid red;
+        }
+        .text::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .first {
+            float: left;
+        }
+        .last {
+            float: right;
+        }
+
+        .imgbox {
+
+        }
+        .imgbox img {
+            width: 100%;
+        }
+        #content aside {
+            border: 1px solid red;
+            width: 240px;
+            padding: 10px;
+            float: right;
+            background-color: #ddd;
+        }
+        #content aside .ulBackground {
+            background-color: silver;
+            border-radius: 10px;
+            margin: 46px 30px;
+            padding-right: 30px;
+        }
+        #content aside ul li {
+            border: 1px solid red;
+        }
+        footer {
+            text-align: center;
+            background-color: #333;
+            height: 50px;
+            padding: 5px;
+        }
+        footer p {
+            color: #fff;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>HTML5</h1>
+            <nav>
+                <ul class="gnb">
+                    <li ><a href="#">home</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">feedback</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content">
+            <section>
+                <h2>about html5</h2>
+                <div class="text">
+                    <p class="first">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quasi maxime minus voluptatum numquam vitae explicabo dolore adipisci velit necessitatibus repudiandae quam vero beatae, vel accusamus ut amet omnis rerum!</p>
+                    <p class="last">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quibusdam quidem veniam ipsa minima sequi libero ullam nobis, asperiores officiis debitis! Blanditiis aspernatur voluptatibus cumque impedit dolor at unde repellat.</p>
+                </div>
+                <div class="imgbox">
+                    <img src="http://placehold.it/1000x400" alt="">
+                </div>
+            </section>
+            <aside>
+                <ul class="ulBackground">
+                    <li>home</li>
+                    <li>about</li>
+                    <li>feedback</li>
+                    <li>contact</li>
+                </ul>
+                <ul class="ulBackground">
+                    <li>home</li>
+                    <li>about</li>
+                    <li>feedback</li>
+                    <li>contact</li>
+                </ul>
+                <ul class="ulBackground">
+                    <li>home</li>
+                    <li>about</li>
+                    <li>feedback</li>
+                    <li>contact</li>
+                </ul>
+            </aside>
+        </div>
+        <footer>
+            <p>Copy right</p>
+        </footer>
+    </div>
+</body>
+</html>
