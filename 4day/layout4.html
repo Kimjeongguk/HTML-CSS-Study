@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            /* border: 1px solid red; */
+        }
+        #wrap {
+
+        }
+        .inner {
+            width: 800px;
+            margin: 0 auto;
+            padding-top: 10px 0;
+        }
+        header {
+            background-color: pink;
+        }
+        #content {
+            width: 800px;
+            margin: 10px auto;
+        }
+        #content::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #content section {
+            height: 200px;
+            background-color:aqua; 
+            margin: 1px;
+            border: 1px solid #999;
+            box-sizing: border-box;
+        }
+        #content section:nth-child(1) {
+            background-color:aqua; 
+            float: left;       
+            width: 28%;
+            /* margin-bottom: 10px; */
+        }
+        #content section:nth-child(2) {
+            background-color: blanchedalmond;
+            float: right;
+            width: 60%;
+        }
+        #content section:nth-child(3) {
+            float: left;
+            width: 33%;
+           
+        }
+        #content section:nth-child(4) {
+            float: left;
+            width: 33%;
+        }
+        #content section:nth-child(5) {
+            float: left;
+            width: 33%;
+        }
+        footer {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="inner">
+                <h1>상단</h1>
+            </div>
+        </header>
+        <div id="content">
+            <section>1</section>
+            <section>2</section>
+            <section>3</section>
+            <section>4</section>
+            <section>5</section>
+        </div>
+        <footer>
+            <div class="inner">
+                <p>카피단</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

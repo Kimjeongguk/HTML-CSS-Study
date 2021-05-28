@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항</title>
+    <style>
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+        #wrap::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #wrap div {
+            width: 260px;
+            float: left;
+            background-color: cornsilk;
+            border-radius: 30px;
+        }
+        #wrap div h3 {
+            border-bottom: 1px solid #333;
+            font-weight: normal;
+            padding: 0 0 10px 20px;
+        }
+        #wrap div ul {
+            list-style: none;
+            padding: 0;
+        }
+        #wrap div ul li {
+            line-height: 1.8;
+            padding-left: 30px;
+        }
+        #wrap div:nth-child(2) {
+            margin: 0 10px;
+        }
+        #wrap div:first-child ul li:nth-child(2n-1) {
+            background-color: rgb(167, 162, 167);
+        }
+        #wrap div:nth-child(2) ul li:nth-child(2n) {
+            background-color: rgb(167, 162, 167);
+        }
+        #wrap div:nth-child(3) ul li:nth-child(3) {
+            background-color: rgb(167, 162, 167);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div>
+            <h3>공지사항1</h3>
+            <ul>
+                <li>게시판글01</li>
+                <li>게시판글02</li>
+                <li>게시판글03</li>
+                <li>게시판글04</li>
+                <li>게시판글05</li>
+            </ul>
+        </div>
+        <div>
+            <h3>공지사항2</h3>
+            <ul>
+                <li>게시판글01</li>
+                <li>게시판글02</li>
+                <li>게시판글03</li>
+                <li>게시판글04</li>
+                <li>게시판글05</li>
+            </ul>
+        </div>
+        <div>
+            <h3>공지사항3</h3>
+            <ul>
+                <li>게시판글01</li>
+                <li>게시판글02</li>
+                <li>게시판글03</li>
+                <li>게시판글04</li>
+                <li>게시판글05</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

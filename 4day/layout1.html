@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>layout1</title>
+    <style>
+        * {
+            /* border: 1px solid red; */
+        }
+        #wrap {
+            width: 700px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: cyan;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+        header h1 {
+            text-align: center;
+        }
+        header ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        header ul {
+            list-style: none;
+            padding: 0;
+            margin-left: 150px;
+        }
+        header ul li {
+            float: left;
+            border: 1px solid blue;
+            padding: 10px 20px;
+            margin-right: 10px;
+        }
+        header ul li:hover {
+            background-color: blue;
+        }
+        header ul li a {
+            text-decoration: none;
+        }
+        header ul li:hover a {
+            color: #fff;
+        }
+        #content {
+            margin-top: 20px;
+            background-color: orange;
+        }
+        #content::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #content section {
+            border: 1px solid red;
+            float: left;
+            width: 33.3333%;
+            height: 300px;
+            box-sizing: border-box;
+        }
+        footer {
+            margin-top: 20px;
+            background-color: #ddd;
+            height: 80px;
+            text-align: center;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>LOGO</h1>
+            <nav>
+                <ul class="gnb">
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content">
+            <section>본문1</section>
+            <section>본문2</section>
+            <section>본문3</section>
+        </div>
+        <footer>
+            <p>copyright.</p>
+        </footer>
+    </div>
+</body>
+</html>
