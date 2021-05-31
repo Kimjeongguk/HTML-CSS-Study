@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        form {
+            width: 500px;
+            margin: 0 auto;
+        }
+        form ul {
+            list-style: none;
+        }
+        form ul li {
+            line-height: 2;
+        }
+        label {
+            width: 120px;
+            display: inline-block;
+            text-align: right;
+            vertical-align: middle;
+        }
+        .btn {
+            width: 100%;
+            margin-top: 10px;
+            padding: 5px 0px;
+        }
+        input:focus {
+            outline-color: springgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="">
+        <fieldset>
+            <legend>Login Info</legend>
+            <ul>
+                <li>
+                    <label for="user_id">ID</label>
+                    <input type="text" id="user_id">
+                </li>
+                <li>
+                    <label for="user_pw">PW</label>
+                    <input type="password" id="user_pw">
+                </li>
+                <li>
+                    <label for="user_pw2">PW_CK</label>
+                    <input type="password" id="user_pw2">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>개인정보</legend>
+            <ul>
+                <li>
+                    <label for="user_name">이름</label>
+                    <input type="text" id="user_name">
+                </li>
+                <li>
+                    <label for="user_email">이메일주소</label>
+                    <input type="text" id="user_email">
+                </li>
+                <li>
+                    <label for="user_phone">연락처</label>
+                    <input type="text" id="user_phone">
+                </li>
+                <li>
+                    <label for="user_page">블로그/홈페이지</label>
+                    <input type="text" id="user_page">
+                </li>
+            </ul>
+        </fieldset>
+        <input type="submit" value="회원가입하기" class="btn">
+    </form>
+</body>
+</html>

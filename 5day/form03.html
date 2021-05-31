@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        form ul {
+            list-style: none;
+        }
+        input:checked + span {
+            background-color: yellow;
+            color: red;
+        }
+        input[type="number"] {
+            outline: 5px solid blue;
+        }
+        input[type="color"] {
+            outline: 5px solid yellow;
+        }
+        input[type="reset"] {
+            background-image: linear-gradient(to bottom, #ddd, #333);
+        }
+        input[type="reset"]:hover {
+            background-image: linear-gradient(to bottom, green, red);
+        }
+        input:read-only {
+            color: red;
+            background-color: #ddd;
+            border: 1px solid #333;
+        }
+        ::placeholder {
+            color: blue;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <h1>여름방학 특강 신청</h1>
+    <form action="">
+        <fieldset>
+            <legend>수강과목</legend>
+            <ul>
+                <li>
+                    <label for="test">기본정보</label>
+                    <input type="text" id="test" value="공대만 신청가능" readonly>
+                </li>
+                <li>
+                    <label for="">
+                        <input type="checkbox" value="sub1" checked>
+                        <span>영어</span>
+                    </label>
+                    <label for="">
+                        <input type="checkbox" value="sub2">
+                        <span>수학</span>
+                    </label>
+                    <label for="">
+                        <input type="checkbox" value="sub3">
+                        <span>과학</span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="day" value="a" checked>
+                        <span>오전반</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="day" value="b">
+                        <span>오후반</span>
+                    </label>
+                </li>
+                <li>
+                    <label for="time">수강시간 선택</label>
+                    <input type="datetime-local" id="time">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>신청자 정보</legend>
+            <ul>
+                <li>
+                    <label for="num">학번</label>
+                    <input type="number" id="num" placeholder="12345">
+                </li>
+                <li>
+                    <label for="">학과</label>
+                    <!-- <input type="text" list="choices"> -->
+                    <select>
+                        <option value="" label="영문과"></option>
+                        <option value="" label="디자인학과"></option>
+                        <option value="" label="컴퓨터공학과"></option>
+                    <select>
+                </li>
+                <li>
+                    <label for="book">교재가격</label>
+                    <input type="range" id="book" min="0" max="100" value="70">
+                </li>
+                <li>
+                    <label for="color">색상 선택</label>
+                    <input type="color" id="color" value="#ff0000">
+                </li>
+                <li>
+                    <p>엠티 기간 선택</p>
+                    <label>
+                        <input type="date" id="start">
+                    </label>
+                    <label>
+                        <input type="date" id="end">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="file">사진첨부
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>건의사항</legend>
+            <textarea name="" id="" cols="70" rows="10" placeholder="간단하게 작성하게요"></textarea>
+        </fieldset>
+        <input type="image" src="/5day/images/logo.jpg">
+        <button type="submit">전송하기</button>
+        <input type="reset" value="다시작성">
+    </form>
+</body>
+</html>

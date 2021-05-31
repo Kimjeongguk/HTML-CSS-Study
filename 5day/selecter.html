@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 특정단어로 시작 */
+        li[class^="en"] {
+            background-color: red;
+        }
+        /* 특정 문자로 끝나면 */
+        li[class$="1"] {
+            color: blue;
+        }
+        /* 특정문자를 포함하면 */
+        li[class*="e"] {
+            text-decoration: underline;
+        }
+        /* 띄어쓰기 기중 특정 단어가 포함 되면 선택 */
+        li[class~="text"] {
+            border-left: 5px solid black;
+        }
+        p::first-line {
+            background-color: pink;
+        }
+        p::first-letter {
+            font-size: 52px;
+            color: red;
+        }
+        p::selection {
+            background-color: green;
+            color: #fff;
+        }
+        :not(li) {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>외국어 서비스</h1>
+    <ul>
+        <li class="en-1 text">zx cv 영어-미국식</li>
+        <li class="en-2">xc zv 영어-영국식</li>
+        <li class="eg-2 text">영sdfa어-영국식</li>
+        <li class="ko-1">한국어</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Officia facilis repellendus soluta sed amet modi cumque 
+         rem enim voluptas? Unde iste repellat consequatur <br>
+          ea inventore dolorum tempore ex, a adipisci?</p>
+</body>
+</html>
