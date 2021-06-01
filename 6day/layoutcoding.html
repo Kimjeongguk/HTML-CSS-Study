@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탬메뉴 레이아웃</title>
+    <style>
+        * {
+            
+        }
+        body, h1, h2, h3, h4, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+        div, header, footer, section, aside {
+            /* border: 1px solid red; */
+        }
+        .clear::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #wrap {
+            width: 960px;
+            margin: 0 auto;
+        }
+        header {
+            height: 160px;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        .title {
+            float: left;
+            text-transform: uppercase;
+            margin-top: 45px;
+            margin-left: 10px;
+        }
+        .title h1 {
+            margin-bottom: 5px;
+        }
+        .title p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        header nav {
+
+        }
+        header nav ul {
+            list-style: none;
+        }
+        header nav ul li {
+            float: left;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .top_menu {
+            position: absolute;
+            top: 30px;
+            right: 0;
+        }
+        .top_menu ul {
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+        .top_menu ul li {
+            font-size: 12px;
+            padding: 8px 15px;
+            border-right: 1px solid #333;
+        }
+        .top_menu ul li:hover {
+            background-color: #333;
+        }
+        .top_menu ul li:hover a {
+            color: #fff;
+        }
+        .top_menu ul li:last-child {
+            border-right: 0;
+        }
+        .main_menu {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .main_menu ul {
+        }
+        .main_menu ul li {
+            font-size: 18px;
+            padding: 10px 20px;
+            border-top: 1px solid #333;
+            border-right: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        .main_menu ul li:hover {
+            background-color: sandybrown;
+        }
+        .main_menu ul li:hover a {
+            color: #fff;
+        }
+        .main_menu ul li:first-child {
+            border-left: 1px solid #333;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        .main_menu ul li:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        #content {
+            margin: 10px 0;
+        }
+        .left {
+            margin: 20px 0;
+            width: 730px;
+            float: left;
+        }
+        .left div {
+            border: 1px solid #333;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        .left div h3 {
+            color: red;
+            margin-bottom: 5px;
+        }
+        .left div p {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.8;
+        }
+        .right {
+            margin: 20px 0;
+            width: 200px;
+            float: right;
+        }
+        .right input {
+            display: none;
+        }
+        .right section label{
+            background-color: #000;
+            color: #fff;
+            width: 100px;
+            box-sizing: border-box;
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            text-align: center;
+            border: 1px solid #000;
+        }
+        .right input:first-child:checked ~ section label:first-child {
+            background-color: #fff;
+            color: #000;
+            border-bottom-color: #fff;
+        }
+        .right input:nth-child(2):checked ~ section label:last-child {
+            background-color: #fff;
+            color: #000;
+            border-bottom-color: #fff;
+        }
+        .right input:nth-child(1):checked ~ .tab_item:nth-of-type(1) {
+            display: block;
+        }
+        .right input:nth-child(2):checked ~ .tab_item:nth-of-type(2) {
+            display: block;
+        }
+        .right .tab_item {
+            border: 1px solid #000;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            display: none;
+        }
+        .tab_item ul {
+            list-style: none;
+        }
+        .tab_item ul li {
+            padding: 0;
+            border-bottom: 1px solid #000;
+        }
+        .tab_item ul li::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .tab_item ul li .imgbox {
+            width: 50px;
+            float: left;
+        }
+        .tab_item ul li .imgbox img {
+        }
+        .tab_item ul li:last-child {
+            border-bottom: none;
+        }
+        .tab_item ul li .txtbox {
+            width: 140px;
+            float: right;
+            padding: 4px 0 0 4px;
+        }
+        .tab_item ul li .txtbox h4 {
+            font-size: 14px;
+            color: #000;
+            margin: 5px 0 4px;
+        }
+        .tab_item ul li .txtbox p {
+            font-size: 12px;
+            color: #555;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        footer {
+            width: 960px;
+            border: 1px solid #333;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="title">
+                <h1>레이아웃 코딩</h1>
+                <p>html5 + css</p>
+            </div>
+            <nav class="top_menu">
+                <ul class="clear">
+                    <li><a href="#">웹</a></li>
+                    <li><a href="#">모바일</a></li>
+                    <li><a href="#">게임</a></li>
+                    <li><a href="#">시뮬레이터</a></li>
+                    <li><a href="#">데이터</a></li>
+                </ul>
+            </nav>
+            <nav class="main_menu">
+                <ul class="clear">
+                    <li><a href="#">HTMLL5</a></li>
+                    <li><a href="#">CSS3</a></li>
+                    <li><a href="#">javascript</a></li>
+                    <li><a href="#">jQuery</a></li>
+                    <li><a href="#">Node.js</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content" class="clear">
+            <section class="left">
+                <div class="txt1">
+                    <h3>문단제목01</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Fugiat in cupiditate mollitia laudantium?
+                        Eos, ea laudantium fugit molestiae quos odio consequatur 
+                        eaque praesentium esse aliquam, iusto, minus incidunt quidem repudiandae.
+                    </p>
+                </div>
+                <div class="txt2">
+                    <h3>문단제목02</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Fugiat in cupiditate mollitia laudantium?
+                        Eos, ea laudantium fugit molestiae quos odio consequatur 
+                        eaque praesentium esse aliquam, iusto, minus incidunt quidem repudiandae.
+                    </p>
+                </div>
+                <div class="txt3">
+                    <h3>문단제목03</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Fugiat in cupiditate mollitia laudantium?
+                        Eos, ea laudantium fugit molestiae quos odio consequatur 
+                        eaque praesentium esse aliquam, iusto, minus incidunt quidem repudiandae.
+                    </p>
+                </div>
+            </section>
+            <aside class="right">
+                <input type="radio" name="tab" id="first" checked>
+                <input type="radio" name="tab" id="second">
+                <section>
+                    <label for="first">첫번째</label>
+                    <label for="second">두번째</label>
+                </section>
+                <div class="tab_item">
+                    <!-- 첫번째 탭메뉴 컨텐츠 입니다.111 -->
+                    <ul class="list01">
+                        <li>
+                            <a href="#">
+                                <div class="imgbox">
+                                    <img src="http://placehold.it/45x45" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <h4>HTML5 + CSS3</h4>
+                                    <p>2021-06-01 : 기타 공지사항 안내 입니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="imgbox">
+                                    <img src="http://placehold.it/45x45" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <h4>HTML5 + CSS3</h4>
+                                    <p>2021-06-01 : 기타 공지사항 안내 입니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="imgbox">
+                                    <img src="http://placehold.it/45x45" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <h4>HTML5 + CSS3</h4>
+                                    <p>2021-06-01 : 기타 공지사항 안내 입니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="imgbox">
+                                    <img src="http://placehold.it/45x45" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <h4>HTML5 + CSS3</h4>
+                                    <p>2021-06-01 : 기타 공지사항 안내 입니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="imgbox">
+                                    <img src="http://placehold.it/45x45" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <h4>HTML5 + CSS3</h4>
+                                    <p>2021-06-01 : 기타 공지사항 안내 입니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab_item">
+                    <!-- 두번째 탭메뉴 컨텐츠 입니다.222 -->
+                    <ul class="list02">
+                        <li>
+                            <a href="#">
+                                <div class="imgbox">
+                                    <img src="http://placehold.it/45x45" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <h4>Javascript</h4>
+                                    <p>2021-07-01 : 기타 공지사항 안내 입니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="imgbox">
+                                    <img src="http://placehold.it/45x45" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <h4>Javascript</h4>
+                                    <p>2021-07-01 : 기타 공지사항 안내 입니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="imgbox">
+                                    <img src="http://placehold.it/45x45" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <h4>Javascript</h4>
+                                    <p>2021-07-01 : 기타 공지사항 안내 입니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="imgbox">
+                                    <img src="http://placehold.it/45x45" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <h4>Javascript</h4>
+                                    <p>2021-07-01 : 기타 공지사항 안내 입니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="imgbox">
+                                    <img src="http://placehold.it/45x45" alt="">
+                                </div>
+                                <div class="txtbox">
+                                    <h4>Javascript</h4>
+                                    <p>2021-07-01 : 기타 공지사항 안내 입니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <footer>
+            <p>
+                HTML5 + CSS3
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

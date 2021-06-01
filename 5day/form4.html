@@ -4,22 +4,57 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
         #wrap {
             width: 500px;
             margin: 0 auto;
             border: 1px solid #333;
-            padding: 20px
+            padding: 30px;
         }
-        #wrap p {
+        .intro {
             border-bottom: 1px solid #ddd;
-            display: block;
-            font-size: 15px;
+            margin-bottom: 40px;
         }
-        form {}
+        .intro h1 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+        .intro p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        form fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+        form legend {
+            font-weight: bold;
+            color: blue;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
         form ul {
             list-style: none;
+            padding: 0;
         }
-        form ul li {}
+        form ul li {
+            /* line-height: 2; */
+
+            margin-bottom: 5px;
+        }
+        form ul li label {
+            display: inline-block;
+            width: 70px;
+            border: 1px solid red;
+            vertical-align: middle;
+        }
+        form input {
+            padding: 3px;
+        }
         input:checked + span {
             color: blue;
         }
@@ -27,14 +62,69 @@
             outline: 1px soild blue;
             outline-color: blue;
         }
-
+        form textarea:focus {
+            outline-color: skyblue;
+        }
+        form select {
+            padding: 6px;
+        }
+        form select:focus {
+            outline-color: skyblue;
+        }
+        form fieldset:nth-child(2) label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        form .btn1 {
+            background-color: blueviolet;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        form .btn1:hover {
+            background-color: chartreuse;
+        }
+        form .btn2 {
+            background-color: rgb(67, 217, 228);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        form table {
+            border-collapse: collapse;
+            width: 500px ;
+        }
+        form table th, form table td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+        form table td {
+            text-align: center;
+        }
+        form table th {
+            background-color: cadetblue;
+        }
+        form table tr th:first-child {
+            background-color: purple;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <h1>프런트엔드 개발자 지원서</h1>
-        <p>HTML, CSS Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+        <div class="intro">
+            <h1>프런트엔드 개발자 지원서</h1>
+            <p>HTML, CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+        </div>
         <form action="">
+            <fieldset>
                 <legend>개인정보</legend>
                 <ul>
                     <li>
@@ -43,30 +133,65 @@
                     </li>
                     <li>
                         <label for="user_phone">연락처</label>
-                        <input type="text" id="user_phone">
+                        <input type="tel" id="user_phone" size="3" maxlength="3"> -
+                        <input type="tel" id="user_phone" size="4" maxlength="4"> -
+                        <input type="tel" id="user_phone" size="4" maxlength="4">
+                    </li>
+                    <li>
+                        <label for="user_email">email</label>
+                        <input type="email" id="user_email"> @
+                        <select name="" id="">
+                            <option value="">선택</option>
+                            <option value="">naver.com</option>
+                            <option value="">gmail.com</option>
+                        </select>
                     </li>
                 </ul>
+            </fieldset>
+            <fieldset>
                 <legend>지원 분야</legend>
                 <ul>
                     <li>
-                        <input type="radio" name="job" checked>
+                        <input type="radio" name="job" value="web1" checked>
                         <span>웹 퍼블리싱</span>
                     </li>
                     <li>
-                        <input type="radio" name="job">
+                        <input type="radio" name="job" value="web2">
                         <span>웹 애플리케이션 개발</span>
                     </li>
                     <li>
-                        <input type="radio" name="job">
+                        <input type="radio" name="job" value="web3">
                         <span>개발 환경 개선</span>
                     </li>
                 </ul>
+            </fieldset>
+            <fieldset>
                 <legend>지원 동기</legend>
                 <textarea name="" id="" cols="50" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
-            </form>
-            <button type="submit">접수하기</button>
-            <button type="submit">다시쓰기</button>
-        
-    </div>
-</body>
+            </fieldset>
+            <fieldset>
+                <legend>작업스킬</legend>
+                <table border="1">
+                    <tr>
+                        <th rowspan="2">구분</th>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                        <th>jQuery</th>
+                    </tr>
+                    <tr>
+                        <td>상급</td>
+                        <td>상급</td>
+                        <td>중급</td>
+                    </tr>
+                    <tr>
+                        <th>자격증</th>
+                        <td colspan="3">GTQ1급 / 웹디자인기능사</td>
+                    </tr>
+                </table>
+            </fieldset>
+            <input type="submit" value="접수하기" class="btn1">
+            <input type="reset" value="다시작성" class="btn2">
+        </form>
+     </div>
+ </body>
 </html>
