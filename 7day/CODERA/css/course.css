@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+.intro {}
+.intro .left {
+    float: left;
+    width: 368px;
+    margin-right: 40px;
+}
+.intro .left img {
+    width: 100%;
+    border-radius: 10px;
+}
+.intro .right {
+    float: left;
+    width: 590px;
+}
+#content .intro .right .tit_intro {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 0;
+}
+.intro_list {
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.8;
+}
+.intro_list li {}
+.intro_list li:first-child {
+    font-weight: bold;
+    color: #c84040;
+}
+.intro .iocon {}
+.intro .icon span {
+    background-color: #c84040;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+.intro .icon span:hover {
+    background-color: tomato;
+    cursor: pointer;
+}
+
+.point {
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px 100px;
+    background-image: url(../images/point.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+.point p {
+    line-height: 2;
+    
+}
+.schedule {
+    margin-top: 30px;
+}
+.schedule ul {
+    list-style: none;
+    margin: 10px;
+}
+.schedule ul li {
+    line-height: 3;
+    border-bottom: 1px dashed #999;
+    width: 390px;
+    margin-left: 20px;
+}
+.schedule ul li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.schedule ul li .date {
+    width: 130px;
+    display: block;
+    float: left;
+}
+.schedule ul li .time {
+    width: 130px;
+    display: block;
+    float: left;
+    text-align: center;
+}
+.schedule ul li .subject {
+    width: 130px;
+    display: block;
+    float: left;
+    text-align: center;
+}
+.instructor {
+    margin-top: 50px;
+    height: 400px;
+}
+.instructor .left {
+    float: left;
+    margin: 30px;
+}
+.instructor .left img {
+    border-radius: 50%;
+}
+.instructor .right {
+    float: right;
+    margin: 50px 300px 0 0;
+}
+.instructor .right h4 {
+    font-size: 30px;
+}
+.instructor .right p {
+    line-height: 2;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.instructor .right a {
+    margin: 0 auto;
+    background-color: #c84040;
+    display: block;
+    border-radius: 10px;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+
+}

@@ -78,26 +78,36 @@ header .main_menu {
     right: 30px;
 }
 header .main_menu>ul>li {
-    font-size: 16px;
+    font-size: 18px;
     padding: 0 12px;
-    
+    float: left;
+    position: relative;
 }
-.main_menu>ul>li:hover a {
+.main_menu>ul>li>a {
+    color: #fff;
+}
+.main_menu>ul>li:hover>a {
     color: aqua;
 }
-.main_menu .sub_menu {
-    position: absolute;
-    width: 100%;
-    top: 40px;
-    /* left: 0;
-    right: 0; */
+.main_menu>ul>li:hover .sub_menu {
+    display: block;
 }
-.main_menu .sub_menu ul {
+.sub_menu {
+    position: absolute;
+    width: 100px;
+    top: 40px;
+    /* margin-left: -50px; */
+    display: none;
+}
+.sub_menu>ul {
     padding: 0;
 }
-.main_menu .sub_menu ul li {
+.sub_menu>ul>li {
     float: none;
-    width: 100%;
+    font-size: 13px;
+    padding: 5px 0;
+    text-align: center;
+    background-color: skyblue;
 }
 #visual {}
 #content {

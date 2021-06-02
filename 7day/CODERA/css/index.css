@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+
+nav ul {
+    list-style: none;
+}
+ul li a{
+    color: #fff;
+}
+#wrap {
+
+}
+
+#visual {
+    height: 450px;
+    background-image: url(../images/keyvisual.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#content h2 {
+    font-size: 42px;
+    text-align: center;
+    font-weight: normal;
+    margin: 10px 0;
+}
+#content h2 span {
+    font-size: 42px;
+}
+#content h2.title2 {
+    font-size: 0;
+}
+.title1 {
+    color: #333;
+}
+.orange {
+    color: orange;
+}
+.skyblue {
+    color: skyblue;
+}
+span:nth-child(6) {
+    margin: 0 20px;
+}
+.green {
+    color: green;
+}
+.pink {
+    color: tomato;
+}
+.main_color {
+    color: #c84040;
+    font-weight: bold;
+}
+#content h3 {
+    margin-top: 30px;
+}
+
+.notice_list {
+    margin: 20px 0px 30px;
+    list-style: none;
+}
+.notice_list li {
+    /* list-style-image: url(../images/hart.png); */
+    line-height: 1.8;
+    background-image: url(../images/hart.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.course_list {
+    margin: 20px 0 30px;
+}
+.course_list li {
+    list-style: none;
+    width: 246.25px;
+    margin-right: 5px;
+    float: left;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 5px 20px 8px #333;
+}
+.course_list li:hover{
+    border: 1px solid #c84040;
+}
+.course_list li img {
+    width: 100%;
+}
+.course_list li h4 {
+    text-align: center;
+    margin: 10px 0 5px;
+}
+.course_list li a {
+    color: #333;
+    display: block;
+    height: 100%;
+}
+.course_list li:last-child {
+    margin-right: 0;
+}
