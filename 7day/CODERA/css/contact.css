@@ -1,1 +1,73 @@
 @charset "utf-8";
+
+#content {
+    padding: 40px 0 60px;
+}
+.tit_red {
+    font-size: 22px;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+
+.subtitle {
+    margin: 20px 0 0;
+}
+.form_list {
+    margin: 30px 0;
+}
+.form_list li {
+    padding: 10px 0;
+    list-style: none;
+}
+.form_list li label {
+    width: 160px;
+    display: inline-block;
+    font-weight: bold;
+    color: #333;
+    vertical-align: middle;
+}
+.form_list li input {
+    padding: 7px;
+    width: 300px;
+    border: 2px solid teal;
+    border-radius: 5px;
+}
+.form_list li input:focus {
+    outline-color: #c84040;
+}
+.form_list li select {
+    padding: 7px;
+    width: 317px;
+    border: 2px solid teal
+}
+.form_list li select:focus {
+    outline-color: #c84040;
+}
+.form_list li textarea {
+    padding: 10px;
+    width: 800px;
+    border: 2px solid teal
+}
+.form_list li textarea:focus {
+    outline-color: #c84040;
+}
+.form_list li textarea::placeholder {
+    color: #c84040;
+}
+.form_list li:last-child label {
+    vertical-align: top;
+    margin-top: 10px;
+}
+form .btn {
+    background-color: #c84040;
+    width: 300px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}
+form .btn:hover {
+    background-color: tomato;
+}
