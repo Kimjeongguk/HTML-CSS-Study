@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .origin {
+            width: 350px;
+            height: 200px;
+            border: 1px solid #333;
+            float: left;
+            margin: 40px;
+        }
+        .origin img {
+            width: 100%;
+        }
+        .origin>div {
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+        .scaleX:hover {
+            transform: scaleX(2);
+        }
+        .scaleY:hover {
+            transform: scaleY(0.1);
+        }
+        .scale:hover {
+            transform: scale(100);
+        }
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="scaleX">
+            <img src="01.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="scaleY">
+            <img src="01.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="scale">
+            <img src="01.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .clear::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #wrap {
+            width: 900px;
+            margin: 0 auto;
+        }
+        #wrap h1 {
+            text-align: center;
+            position: relative;
+        }
+        h1::after {
+            content: "";
+            position: absolute;
+            width: 0px;
+            height: 3px;
+            background-color: red;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, -50%);
+            transition: 1s;
+        }
+        #wrap h1:hover::after {
+            width: 400px;
+        }
+        #wrap div {
+            float: left;
+            width: 200px;
+            margin: 30px;
+            text-align: center;
+        }
+        #wrap div {
+            position: relative;
+        }
+        #wrap div img {
+            width: 100%;
+            border: 5px solid green;
+            border-radius: 50%;
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: ease;
+        }
+        #wrap .item3 img {
+            border: 5px solid pink;
+            
+
+        }
+        #wrap div img:hover {
+            transform: scale(1.1);
+        }
+        #wrap .item1 a {
+           
+        }
+        #wrap a span {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            position: absolute;
+            opacity: 0;
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: ease;
+        }
+        
+        #wrap .item1 a span {
+            background-color: green;
+            color: #fff;
+            top: 200px;
+            left: 0;
+        }
+        #wrap .item2 a span {
+            background-color: green;
+            color: #fff;
+            top: 200px;
+            left: 0;
+        }
+        #wrap .item3 a span {
+            background-color: pink;
+            color: #fff;
+            top: 200px;
+            left: 0;
+        }
+        #wrap  a:hover span {
+            opacity: 1;
+            top: 0;
+        }
+        #wrap div h3 {
+            font-weight: bold;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="wrap" class="clear">
+        <h1>지금 제일 잘 나가는 상품</h1>
+        <div class="item1">
+            <a href="#">
+                <img src="marke/marke1.jpg" alt="">
+                <span>20%</span>
+            </a>
+            <p>
+                [아토세이프]덴티본조르노 치약(ㅁㄴㄻ니ㅏ럼니ㅏ럼ㄴ이라~~~~~)
+            </p>
+            <h3>13,900</h3>
+        </div>
+        <div class="item2">
+            <a href="#">
+                <img src="marke/marke2.jpg" alt="">
+                <span>50%</span>
+            </a>
+            <p>
+                [잘풀리는집]아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏ아아앙아ㅏ핫도그
+            </p>
+            <h3>23,900</h3>
+        </div>
+        <div class="item3">
+            <a href="#">
+                <img src="marke/marke3.jpg" alt="">
+                <span>80%</span>
+            </a>
+            <p>
+                [휴지~~]ㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓ휴지다
+            </p>
+            <h3>10,900</h3>
+        </div>
+    </div>
+</body>
+</html>

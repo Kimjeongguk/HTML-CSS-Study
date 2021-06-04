@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .origin {
+            width: 350px;
+            height: 200px;
+            border: 1px solid #333;
+            float: left;
+            margin: 40px;
+            perspective: 1px;
+        }
+        .origin img {
+            width: 100%;
+        }
+        .origin>div {
+            transition-property: all;
+            transition-duration: 10s;
+            transition-timing-function: ease;
+            /* transition-delay: 2s; */
+        }
+        .rotate2 {
+            transform-origin: right bottom;
+        }
+        .rotate:hover {
+            transform: rotate(180deg);
+        }
+        .rotate2:hover {
+            transform: rotate(-180deg);
+        }
+        .rotateX:hover {
+            transform: rotateX(45deg);
+        }
+        .rotateY:hover {
+            transform: rotateY(45deg);
+        }
+        .rotateZ:hover {
+            transform: rotateZ(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="rotate">
+            <img src="01.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="rotate2">
+            <img src="01.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="rotateX">
+            <img src="01.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="rotateY">
+            <img src="01.jpg" alt="">
+        </div>
+    </div>
+    <div class="origin">
+        <div class="rotateZ">
+            <img src="01.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>
