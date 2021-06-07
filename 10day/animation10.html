@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 400px;
+            background: url(./images/bg.jpg) no-repeat center / auto 100%;
+            border: 5px solid skyblue;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            transition: 1s;
+        }
+        #box:hover {
+            background: url(./images/bg.jpg) no-repeat center / auto 120%;
+        }
+        #box> div {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            border-radius: 50%;
+            bottom: 30px;
+            /* transition: all 1s ease; */
+            bottom: -50px;
+            opacity: 0;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+        #box:hover>div {
+            bottom: 30px;
+            opacity: 1;
+        }
+        .icon1 {
+            background-color: skyblue;
+            left: 30px;
+        }
+        #box:hover .icon1 {
+            transition-delay: 0;
+        }
+        .icon2 {
+            background-color: slateblue;
+            left: 90px;
+        }
+        #box:hover .icon2 {
+            transition-delay: 0.5s
+        }
+        .icon3 {
+            background-color: snow;
+            left: 150px;
+        }
+        #box:hover .icon3 {
+            transition-delay: 1s;
+        }
+        .icon4 {
+            background-color: springgreen;
+            left: 210px;
+        }
+        #box:hover .icon4 {
+            transition-delay: 1.5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="icon1"></div>
+        <div class="icon2"></div>
+        <div class="icon3"></div>
+        <div class="icon4"></div>
+    </div>
+</body>
+</html>
