@@ -1,0 +1,176 @@
+var smilepay_L = {
+    domain              : location.protocol + "//" + location.host
+    ,method             : null
+    ,left               : 0
+    ,top                : 0
+    ,width              : 410
+    ,height             : 640
+    ,p_win              : null
+    ,form               : null
+    ,interval           : null
+    ,closed             : false
+    ,t_url              : null
+
+    ,callPopup : function(txnId, callback, version){
+        if(version === undefined || version == null){
+            this.method = this.domain + '/smilepay/getCertifyPage.htm';
+        }else{
+            this.method = this.domain + '/smile/' + version + '/certPage';
+        }
+        this.setDisplay(txnId, callback);
+    }
+
+    ,movePage : function(txnId, version){
+        if(version === undefined || version == null){
+            this.method = this.domain + '/smilepay/getCertifyPage.htm';
+        }else{
+            this.method = this.domain + '/smile/' + version + '/certPage';
+        }
+        this.useForm("03", txnId, "");
+    }
+
+    ,callBillingPop : function(txnId, callback, version){
+        this.method = this.domain + '/smile/' + version + '/billingCertPage';
+        this.setDisplay(txnId, callback);
+    }
+
+    ,moveBillingPage : function(txnId, version){
+    	this.method = this.domain + '/smile/' + version + '/billingCertPage';
+    	this.useForm("03", txnId, "");
+    }
+    
+    ,setDisplay : function(txnId, callback) {
+        this.t_url = callback;
+
+        if(typeof(this.p_win) !== "undefined" && this.p_win != null) this.p_win.close();
+        
+        var screenLeft = 0, screenTop = 0;
+        if(typeof window.screenLeft !== 'undefined'){
+            screenLeft = window.screenLeft;
+            screenTop = window.screenTop;
+        }else if(typeof window.screenX !== 'undefined'){
+            screenLeft = window.screenX;
+            screenTop = window.screenY;
+        }
+
+        this.left = screenLeft + window.innerWidth / 2 - this.width / 2;
+        this.top = screenTop + window.innerHeight / 2 - this.height / 2;
+        
+        var prop = "width=" + this.width + ", height=" + this.height + ", top=" + this.top + ", left=" + this.left
+            + ", menubar=no, toolbar=no, location=no, resizable=no, scrollbars=no, status=no, titlebar=no";
+            
+        this.p_win = this.openPopup("smilePayPopup", prop);
+        this.useForm("04", txnId, "smilePayPopup");
+    }
+
+    ,openPopup : function(name, props) {
+        smilepay_L.closed = false;
+        var win = window.open('about:blank', name, props);
+        if(typeof(win) === "undefined" || win == null){
+             alert('팝업 차단 기능이 설정되어있습니다. \n차단 기능을 해제(팝업허용)한 후 다시 이용해주십시오. \n팝업 차단 기능을 해제하지 않으면, 정상적인 결제가 이루어지지 않습니다.');
+         }else{
+            win.focus();
+            smilepay_L.interval = window.setInterval(function(){
+                try {
+                    if(win == null || win.closed){
+                        window.clearInterval(smilepay_L.interval);
+                        if(!smilepay_L.closed) {
+                            smilepay_L.closed = false;
+                            if(typeof smilepay_L.t_url === 'function') smilepay_L.t_url(null);
+                        }
+                    }
+                }catch(e){
+                }
+            }, 100);
+         }
+        return win;
+    }
+
+    ,useForm : function(popupType, txnId, target) {
+        if(this.form == null) this.createForm();
+        this.form.action = this.method;
+        this.form.target = target;
+        this.addInput("txnId", txnId);
+        this.addInput("popupType", popupType);
+        this.addInput("deviceType", this.getDeviceType());
+        this.form.submit();
+    }
+
+    ,createForm : function(){        
+        this.form = document.createElement("form");
+        this.form.method = "POST";
+        document.body.appendChild(this.form);
+    }
+
+    ,addInput: function(name, value){
+        if(this.form.txnId !== undefined && name == 'txnId'){
+            this.form.txnId.value = value;
+        }else{
+            var element = document.getElementsByName(name)[0];
+            if(element != null && element !== undefined && name != 'txnId')element.parentNode.removeChild(element);
+            var input = document.createElement("input");
+            input.type = "hidden";
+            input.name = name;
+            input.value = value;
+            this.form.appendChild(input);
+        }
+    }
+
+    ,getDeviceType : function() {
+         if(/Android/i.test(navigator.userAgent)){
+                if(/mobile/i.test(navigator.userAgent)){
+                    return "mobile";
+                }else{
+                    return "tablet";
+                }
+         }else if(/playbook|silk|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            return "mobile";
+         }else if(/iPad/i.test(navigator.userAgent)){
+            return "tablet";
+         }else{
+            return "pc";
+         }
+    }
+
+    ,init : function(){
+        var scripts = document.getElementsByTagName('script');
+        var thisScript = scripts[scripts.length-1];
+        var scriptPath = thisScript.src;
+        
+        this.domain= scriptPath.replace(/^(.*\/\/[^\/?#]*).*$/, "$1");
+        
+        var ua = window.navigator.userAgent;
+        var ieyn = window.navigator.userAgent.indexOf('MSIE'); 
+        var tridentyn = window.navigator.userAgent.indexOf('Trident');    
+        
+        underversion = 0;
+                
+        if (ieyn > -1) {     
+            var ieversion = ua.charAt(ieyn+5);
+            if (ieversion > 1 && ieversion < 10) underversion = 1;
+        } else if (tridentyn > -1)  {
+            var tridentversion = ua.charAt(tridentyn+8);
+            if (tridentversion <= 4) underversion = 2;
+        }    
+        
+        if (underversion > 0) {
+            document.attachEvent("onreadystatechange", function() {
+                if (document.readyState == "complete") smilepay_L.createForm();
+            });        
+        } else {    
+            document.addEventListener("DOMContentLoaded", function(){                
+                smilepay_L.createForm();
+            });
+        }        
+    }
+
+    ,destroy : function() {
+        if(typeof(this.p_win) !== "undefined" && this.p_win != null){
+            this.closed = true;
+            if(this.interval != null) window.clearInterval(this.interval);
+            this.p_win.close();
+        }
+    }
+};
+
+smilepay_L.init();

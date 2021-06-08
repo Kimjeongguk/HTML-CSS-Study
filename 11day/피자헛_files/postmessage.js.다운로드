@@ -1,0 +1,154 @@
+/*
+ * a backwards compatable implementation of postMessage
+ * by Josh Fraser (joshfraser.com)
+ * released under the Apache 2.0 license.
+ *
+ * this code was adapted from Ben Alman's jQuery postMessage code found at:
+ * http://benalman.com/projects/jquery-postmessage-plugin/
+ *
+ * other inspiration was taken from Luke Shepard's code for Facebook Connect:
+ * http://github.com/facebook/connect-js/blob/master/src/core/xd.js
+ *
+ * the goal of this project was to make a backwards compatable version of postMessage
+ * without having any dependency on jQuery or the FB Connect libraries
+ *
+ * my goal was to keep this as terse as possible since my own purpose was to use this
+ * as part of a distributed widget where filesize could be sensative.
+ *
+ */
+
+// everything is wrapped in the XD function to reduce namespace collisions
+/*
+ * a backwards compatable implementation of postMessage
+ * by Josh Fraser (joshfraser.com)
+ * released under the Apache 2.0 license.
+ *
+ * this code was adapted from Ben Alman's jQuery postMessage code found at:
+ * http://benalman.com/projects/jquery-postmessage-plugin/
+ *
+ * other inspiration was taken from Luke Shepard's code for Facebook Connect:
+ * http://github.com/facebook/connect-js/blob/master/src/core/xd.js
+ *
+ * the goal of this project was to make a backwards compatable version of postMessage
+ * without having any dependency on jQuery or the FB Connect libraries
+ *
+ * my goal was to keep this as terse as possible since my own purpose was to use this
+ * as part of a distributed widget where filesize could be sensative.
+ *
+ */
+
+// everything is wrapped in the XD function to reduce namespace collisions
+var XD = function(){
+
+    var interval_id,
+    last_hash,
+    cache_bust = 1,
+    attached_callback,
+    window = this;
+    var ua = window.navigator.userAgent;
+    var edge = ua.indexOf('Edge/');
+    var ieyn = ua.indexOf('MSIE'); 
+	var tridentyn = ua.indexOf('Trident');	
+
+    return {
+        postMessage : function(message, target_url, target) {
+
+            if (!target_url) {
+                return;
+            }
+            
+            var underversion = 0;
+        			
+			if (ieyn > -1) { 
+				var ieversion = ua.charAt(ieyn+5);
+				if (ieversion > 1 && ieversion < 10) { 
+					underversion = 1;
+				}
+			} else if (tridentyn > -1)  {
+				var tridentversion = ua.charAt(tridentyn+8);
+				
+				if (tridentversion <= 4) {
+					underversion = 2;
+				}
+			}
+			
+            if (window['postMessage'] && (edge <= 0 && underversion == 0)) {
+                target['postMessage'](message, target_url.replace( /([^:]+:\/\/[^\/]+).*/, '$1'));
+            } else if (target_url || (window['postMessage'] && (edge > 0 || underversion > 0))) {
+                target.location = target_url.replace(/#.*$/, '') + '#' + (+new Date) + (cache_bust++) + '&' + message;
+            }
+        },
+
+        receiveMessage : function(callback, source_origin) {
+        	
+            if (window['postMessage'] && (edge <= 0 && underversion == 0)) {
+                // bind the callback to the actual event associated with window.postMessage
+            	
+                if (callback) {
+                	// prevent calling twice
+                	if(attached_callback !== undefined) {
+                		if (window['addEventListener']) {
+                            window['removeEventListener']('message', attached_callback, !1);
+                        } else {
+                            window['detachEvent']('onmessage', attached_callback);
+                        }
+                	}
+                	//end
+
+                    attached_callback = function(e) {
+                        if ((typeof source_origin === 'string' && e.origin !== source_origin)
+                        || (Object.prototype.toString.call(source_origin) === "[obj	ect Function]" && source_origin(e.origin) === !1)) {
+                            return !1;
+                        }
+                        callback(e);
+                    };
+                }
+                if (window['addEventListener']) {
+                    window[callback ? 'addEventListener' : 'removeEventListener']('message', attached_callback, !1);
+                } else {
+                    window[callback ? 'attachEvent' : 'detachEvent']('onmessage', attached_callback);
+                }
+            } else {
+            	
+                // a polling loop is started & callback is called whenever the location.hash changes
+                interval_id && clearInterval(interval_id);
+                interval_id = null;
+
+                if (callback) {
+                    interval_id = setInterval(function(){
+                        var hash = document.location.hash,
+                        re = /^#?\d+&/;
+                        if (hash !== last_hash && re.test(hash)) {
+                            last_hash = hash;
+                            callback({data: hash.replace(re, '')});                            
+                           
+                            var ieyn = window.navigator.userAgent.indexOf('MSIE'); 
+							var tridentyn = window.navigator.userAgent.indexOf('Trident');			
+							var underversion = 0;
+							
+							if (ieyn > -1) { 
+								var ieversion = ua.charAt(ieyn+5);
+								if (ieversion > 1 && ieversion < 10) { 
+									underversion = 1;
+								}
+							} else if (tridentyn > -1)  {
+								var tridentversion = ua.charAt(tridentyn+8);
+								
+								if (tridentversion <= 4) {
+									underversion = 2;
+								}
+							}                            
+                            
+                            if (underversion > 0) {                            
+                            	window.location.href.split('#')[0];
+                            } else {                            	
+                            	history.replaceState({}, document.title, window.location.href.split('#')[0]);    
+                            }
+                        }                       
+                        
+                    }, 100);
+                }
+            }
+        }
+    };
+}();

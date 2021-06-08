@@ -1,0 +1,27 @@
+var externApi = {
+
+    web : {
+        onOrderComplete : function(provider , orderNo){
+            window['checkoutComponent'].zone.run(function () { window['checkoutComponent'].component.onComplete(provider , orderNo); })
+        } , 
+
+        onOrderFail : function(provider , code , msg){
+            window['checkoutComponent'].zone.run(function () { window['checkoutComponent'].component.onFail(provider , code , msg); })
+        }, 
+
+        onCheckAdultComplete : function(phone, birth){
+            window['checkoutComponent'].zone.run(function () { window['checkoutComponent'].component.onCheckAdultComplete(phone, birth); })
+        } 
+        
+
+    } , 
+
+    iOS : {
+
+    } , 
+
+    aOS : {
+
+    }
+
+}

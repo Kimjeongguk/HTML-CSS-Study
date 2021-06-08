@@ -9,17 +9,18 @@ body {
 }
 a {
     text-decoration: none;
+    color: #333;
 }
 ul {
     list-style: none;
 }
-.clear::after {
+.clear::after{
     content: "";
     display: block;
     clear: both;
 }
-div, header, footer, section, nav {
-    border: 1px solid red;
+footer, section {
+    /* border: 1px solid red; */
 }
 #wrap {
     width: 1200px;
@@ -28,13 +29,227 @@ div, header, footer, section, nav {
 header {
     height: 100px;
 }
-#visual {
-    height: 300px;
+header .logo {
+    float: left;
+    padding-top: 30px;
 }
-#content {
-    height: 200px;
+header nav {
+    float: right;
 }
-footer {
-    height: 100px;
+.gnb {
+    margin-top: 50px;
+}
+.gnb>li {
+    float: left; 
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #3cb149;
+    position: relative;
+}
+.gnb>li:hover {
+    background-color: #1d8844;
+}
+.gnb>li:hover:hover .sub_menu{
+    display: block;
+}
+.gnb>li>a {
+    color: #fff;
+}
+.sub_menu {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    display: none;
+    z-index: 1;
+}
+.sub_menu li {
+    background-color: #434748;
+}
+/* #434748 #1d8844 */
+.sub_menu li:hover {
+    background-color: #696d6e;
+}
+.sub_menu li a {
+    color: white;
 }
 
+#visual {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+.visual_list {
+    width: 3600px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    animation: move 8s ease infinite;
+} /*돌아갈때*/
+.visual_list li 
+    {width: 1200px;
+    float: left;
+}
+.visual_list li img {
+    width: 100%;
+}
+.sub_title{
+    width: 500px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgba(60,177,79,0.9);
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* transform: translate(-50%, -50%); */
+    margin: -25px 0 0 -250px;
+    z-index: 20;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: normal;
+}
+#content{
+    height: 200px;
+}
+#content .title {
+    border-bottom: 2px solid #3cb149;
+    margin-bottom: 10px;
+}
+#content .title a {
+    display: block;
+    width: 120px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #3cb149;
+    font-size: 16px;
+    font-weight: normal;
+}
+.notice, .gallery, .banner {
+    width: 380px;
+    height: 180px;
+    margin-top: 10px;
+    float: left;
+}
+.notice {}
+.notice_list {
+
+}
+.notice_list li {
+    line-height: 2;
+    font-size: 14px;
+    border-bottom: 1px dashed #ccc;
+}
+.notice_list li a {
+
+}
+.notice_list li span {
+    float: right;
+}
+.gallery {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.gallery_list {
+    text-align: center;
+    margin-top: 15px;
+}
+.gallery_list li {
+    display: inline-block
+}
+.banner {}
+.banner img {
+    display: block;
+    margin: 15px auto 0;
+}
+
+@keyframes move{
+    0%{
+        left: 0px;
+    }
+    33%{
+        left: -1200px;
+    }
+    67%{
+        left: -2400px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+
+footer{
+    height: 100px;
+    border-top: 2px solid #555;
+}
+
+.logo_btm {
+    float: left;
+    padding-top: 30px;
+    filter: grayscale(1);
+}
+.copyright {
+    float: left;
+    width: 700px;
+    text-align: center;
+    color: #333;
+    margin-top: 40px;
+}
+.copyright span {
+    color: #3cb149;
+    font-weight: bold;
+}
+#site {
+    float: right;
+    padding: 8px 20px;
+    border: 1px solid #3cb149;
+    margin-top: 30px;
+}
+
+#popgb {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 30;
+    display: none;
+}
+.modal {
+    width: 350px;
+    height: 250px;
+    padding: 30px;
+    background-color: #fff;
+    margin: 100px auto;
+    position: relative;
+}
+.modal .pop_title {
+    border-bottom: 2px solid #3cb149;
+    padding-bottom: 10px;
+    color: #1d8844;
+}
+.modal .pop_txt {
+    line-height: 2;
+    color: #333;
+    font-size: 14px;
+    margin: 20px 0;
+}
+.modal .pop_btn {
+    background-color: #3cb149;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.modal .pop_btn:hover {
+    background-color: #1d8844;
+}

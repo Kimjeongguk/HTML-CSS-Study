@@ -1,0 +1,5 @@
+#easyXDM_dlp_provider.active { z-index: 9002; overflow: hidden; position: fixed; top: 50%; left: 50%;  border: 0px; font-family: 'dotum', sans-serif; background-color: #fff; color: #333; }
+#easyXDM_dlp_provider.lgpg-has-ad     { width: 658px; height: 512px;  margin-top: -256px; margin-left: -329px; }
+#easyXDM_dlp_provider.lgpg-has-not-ad { width: 508px; height: 512px;  margin-top: -256px; margin-left: -254px; }
+#easyXDM_dlp_provider.lgpg-waiting { width: 270px; height: 130px; margin-left: -135px; margin-top: -75px; }
+#lgpg-bg.active { z-index: 9001; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: #000; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; -moz-opacity: 0.75; -khtml-opacity: 0.75; *filter: alpha(opacity=75); opacity: 0.75; _display: none; _position: static; }
