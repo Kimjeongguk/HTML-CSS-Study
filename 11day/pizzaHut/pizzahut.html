@@ -4,55 +4,123 @@
     <meta charset="UTF-8">
     <title>PizzHut</title>
     <link rel="stylesheet" href="pizzahut.css">
-    <!-- icon은 그냥 무료아이콘 들가서 다운 -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
     <div id="wrap">
         <header class="clear">
-            <div class="top_logo">
-                <img src="images/logo1.png" alt="">
-                <!-- <a href="#"><i class="fas fa-search-plus"></i> -->
-            </div>
-            <nav class="gnb">
-                <ul class="top_menu">
-                    <li><a href="#">메뉴</a>
-                        <ul class="sub_menu">
-                            <li><a href="#">피자</a></li>
-                            <li><a href="#">세트</a></li>
-                            <li><a href="#">사이다</a></li>
-                            <li><a href="#">음료&기타</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">E쿠폰주문</a></li>
-                    <li><a href="#">이벤트</a>
-                        <ul class="sub_event">
-                            <li><a href="#">이벤트</a></li>
-                            <li><a href="#">단체주문</a></li>
-                            <li><a href="#">상품권</a></li>
-                            <li><a href="#">제휴할인</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">멤버십</a></li>
-                    <li><a href="#">About 피자헛&창업</a>
-                        <ul class="sub_about">
-                            <li><a href="#">브랜드</a></li>
-                            <li><a href="#">인재채용</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="box clear">
-                <a href="#" class="address">주소를 입력해주세요.</a>
+            <div class="inner">
+                <div class="top_logo">
+                    <img src="images/logo1.png" alt="">
+                </div>
+                <nav class="gnb">
+                    <ul class="top_menu">
+                        <li><a href="#">메뉴</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">피자</a></li>
+                                <li><a href="#">세트</a></li>
+                                <li><a href="#">사이다</a></li>
+                                <li><a href="#">음료&기타</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">E쿠폰주문</a></li>
+                        <li><a href="#">이벤트</a>
+                            <ul class="sub_event">
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">단체주문</a></li>
+                                <li><a href="#">상품권</a></li>
+                                <li><a href="#">제휴할인</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">멤버십</a></li>
+                        <li><a href="#">About 피자헛&창업</a>
+                            <ul class="sub_about">
+                                <li><a href="#">브랜드</a></li>
+                                <li><a href="#">인재채용</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="box">
+                    <div class="top_icon clear">
+                        <dl>
+                            <dd>
+                                <a href="#"><i class="fas fa-map-marker-alt"></i>
+                                주소를 입력해주세요.
+                                <i class="fas fa-sort-down"></i></a>
+                            </dd>
+                            <dd><a href="#"><i class="far fa-user"></i></a></dd>
+                            <dd><a href="#"><i class="fas fa-shopping-cart"></i></a></dd>
+                            <dd><a href="#"><i class="fas fa-bars"></i></a></dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
         </header>
         <div id="visual">
-            <img src="./images/visual.png" alt="이벤트 이미지">
+            <a href="#">
+                <img src="./images/visual.png" alt="이벤트 이미지">
+            </a>
         </div>
         <div id="content">
-            
+            <div class="inner">
+                <input type="radio" name="tab" id="first" checked>
+                <input type="radio" name="tab" id="second">
+                <section>
+                    <label for="first">배달</label>
+                    <label for="second">포장</label>
+                </section>
+                <section>
+                    <div class="tab_item">
+                        <p>
+                            배달 주소를 입력해 주세요.
+                        </p>
+                        <input type="text">
+                        <div class="icon">
+                            <a href="#"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="tab_item">
+                        <input type="text">
+                        <div class="icon">
+                            <a href="#"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-        <footer></footer>
+        <footer>
+            <div class="right">
+                <img src="./images/logo1.png" alt="푸터 로고">
+            </div>
+            <div class="center">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                    <li><a href="#">창업안내</a></li>
+                    <li>대표번호 1588-5588(운영시간 11:00~22:30)</li>
+                </ul>
+                <ul>
+                    <li>서울시 영등포구 국회대로 74길 4, 9~11층</li>
+                    <li>사업자등록번호 120-81-63948통신판매업신고번호 제2018-서울영등포-1220호</li>
+                    <li>한국피자헛유한회사 대표이사 : 김진영개인정보 보호책임자 : 김기철</li>
+                </ul>
+                <p>
+                    Copyright © BY PIZZA HUT KOREA LTD. ALL RIGHT RESERVED
+                </p>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <img src="./images/1.jpg" alt="1등">
+                <p>
+                    한국능률협회 컨설팅 21년 연속(2001~ 2021) 선정 <br>
+                    한국 산업의 브랜드파워 피자전문점 부문 1위 피자헛
+                </p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

@@ -1,0 +1,340 @@
+@charset "utf-8";
+html {
+    scroll-behavior: smooth;
+}
+#wrap {
+    min-width: 1140px;
+    margin: 0 auto;
+}
+.inner {
+    width: 1140px;
+    margin: 0 auto;
+}
+header {
+    height: 100px;
+    background-color: #1a1f71;
+    border-bottom: 4px solid #f7b600;
+    /* position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999; */
+}
+header .logo {
+    float: left;
+    margin-top: 22px;
+}
+header nav {
+    float: left;
+}
+.gnb {
+    margin: 28px 0 0 280px;
+}
+.gnb li {
+    float: left;
+    padding: 12px 24px;
+}
+.gnb li a {
+    color: #fff;
+}
+.gnb li:hover a {
+    color: #f7b600;
+}
+header .search {
+    float: right;
+    margin-top: 38px;
+    width: 50px;
+    border-left: 1px solid #ddd;
+}
+header .search img {
+    margin-left: 25px;
+}
+#visual {
+    background: url(../images/marquee-visahotdeals-1600x900.jpg) no-repeat center / cover;
+    height: 500px;
+    /* margin-top: 100px; */
+}
+#visual .inner {
+    position: relative;
+}
+.caption {
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    width: 260px;
+    padding: 30px;
+}
+.caption .main_title {
+    font-size: 42px;
+    color: #1a1f71;
+    margin-bottom: 10px;
+}
+.caption .sub_title {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+.caption .caption_btn{
+    width: 100px;
+    height: 34px;
+    background-color: #f7b600;
+    color: #1a1f71;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.caption .caption_btn:hover {
+    color: #f7b600;
+    background-color: #1a1f71;
+}
+#tab_menu {
+    border-bottom: 2px solid #ccc;
+    height: 60px;
+    position: sticky;
+    top: 0px;
+    left: 0;
+    background-color: #fff;
+    z-index: 999;
+    box-shadow: 2px 2px 5px #ddd;
+    overflow: hidden;
+}
+#tab_menu nav {}
+.tab_list {
+    width: 600px;
+    margin: 0 auto;
+}
+.tab_list li {
+    margin: 20px 0;
+    float: left;
+    width: 200px;
+    text-align: center;
+    border-right: 2px solid #ccc;
+    box-sizing: border-box;
+}
+.tab_list li:first-child {
+    border-left: 2px solid #ccc;
+}
+.tab_list li a{
+    color: #1a1f71;
+}
+.tab_list li a:hover {
+    color: #f7b600;
+}
+#content {
+    width: 1140px;
+    margin: 0 auto;
+}
+#content>section {
+    border-bottom: 1px solid #ccc;
+    padding: 100px 0;
+    text-align: center;
+}
+#content>section:last-of-type {
+    border-bottom: 0;
+}
+.con_title {
+    font-size: 36px;
+    color: #1a1f71;
+}
+.con_title .line {
+    position: relative;
+}
+.con_title .line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #f7b600;
+    width: 100%;
+    height: 4px;
+    transform: translateY(-5px) scaleX(0);
+    transition: .5s;
+}
+#content>section:hover .con_title .line::after {
+    transform: translateY(-5px) scaleX(1);
+    z-index: -1;
+}
+.hot_deal {}
+.hot_deal .con_title{
+    margin-bottom: 15px;
+}
+.hot_deal .deal_copy {
+    line-height: 1.6;
+    color: #5c5c5c;
+}
+.store {}
+.store_list {
+    margin-top: 30px;
+}
+.store_list li {
+    width: 340px;
+    height: 190px;
+    margin: 20px;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #f7b600;
+    position: relative;
+    overflow: hidden;
+}
+.store_list li img {
+    width: 100%;
+}
+.hover_box {
+    background-color: rgba(247, 182, 0, .7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(100%);
+    transition: transform .5s ease;
+}
+.store_list li:hover .hover_box {
+    transform: translateY(0);
+}
+.hover_box h3 {
+    color: #fff;
+    font-size: 32px;
+    margin-top: 50px;
+    text-shadow: 2px 2px 2px #1a1f71;
+}
+.hover_box button {
+    margin-top: 10px;
+    background-color: #1a1f71;
+    border: 0;
+    padding: 10px 20x;
+    color: #f7b600;
+}
+.card {
+}
+.card_list {
+    margin-top: 50px;
+}
+.card_list li {
+    width: 360px;
+    margin-right: 25px;
+    float: left;
+}
+.card_list li:last-child {
+    margin-right: 0;
+}
+.card_list li a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    height: 200px;
+}
+.card_list li>a>img {
+    width: 100%;
+    transition: .5s;
+}
+.card_list li:hover>a>img {
+    width: 100%;
+    transform: scale(1.2);
+}
+.card_list li .arrow {
+    position: absolute;
+    left: -80px;
+    bottom: -55px;
+    z-index: 1;
+}
+.card_list li .arrow>img {
+    width: 80%;
+    transform: translate(-70%, 70px);
+    transition: .5s;
+}
+.card_list li:hover .arrow>img {
+    transform: translate(0, 0);
+}
+.card_title {
+    font-size: 32px;
+    margin: 20px 0 15px;
+    color: #1a1f71;
+}
+.card_copy {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+    text-align: left;
+}
+
+footer {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    padding: 50px 0;
+}
+.sitemap {
+    width: 1140px;
+    margin: 0 auto;
+}
+.sitemap dl {
+    float: left;
+    margin-right: 150px;
+}
+.sitemap dl:last-child {
+    margin-right: 0;
+}
+.sitemap dl:last-child dd {
+    float: left;
+    font-size: 28px;
+    line-height: 2;
+    margin-right: 30px;
+}
+.sitemap dl:last-child dd i {
+    color: #1a1f71;
+    transition: color .3s ease;
+}
+.sitemap dl:last-child dd:hover i {
+    color: #f7b600;
+} 
+.sitemap dl dt {
+    font-size: 24px;
+    color: #1a1f71;
+    font-weight: bold;
+    line-height: 2.4;
+}
+.sitemap dl dd {
+    line-height: 1.8;
+    color: #555;
+}
+.sitemap dl dd i {}
+.copy {
+    width: 1140px;
+    margin: 60px auto 0;
+}
+.btm_logo {
+    width: 300px;
+    border-right: 1px solid #ccc;
+    float: left;
+}
+.btm_logo img {
+    width: 80%;
+}
+.copyright {
+    float: right;
+    width: 800px;
+    text-align: center;
+    color: #5c5c5c;
+    margin-top: 10px;
+    font-size: 14px;
+}
+#top {
+    width: 40px;
+    height: 40px;
+    background-color: #1a1f71;
+    border-radius: 3px;
+    text-align: center;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    z-index: 10;
+}
+#top:hover a {
+    color: #f7b600;
+    
+}
+#top a {
+    color: #fff;
+    font-size: 18px;
+    display: block;
+}
