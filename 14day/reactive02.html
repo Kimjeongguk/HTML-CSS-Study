@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 기초</title>
+    <style>
+        /* 공통 + 0 ~ 100% PC 화면 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: cornflowerblue;
+        }
+        #wrap {
+            width: 70%;
+            margin: 0 auto;
+            min-width: 1000px
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 2.625em;
+            margin: 01.250em 0
+        }
+        header ul {
+            list-style: none;
+            padding: 1em 0;
+        }
+        header ul li {
+            width: 25%;
+            font-size: 1em;
+            box-sizing: border-box;
+            float: left;
+            border: 2px solid blue;
+            text-align: center;
+            height: 40px;
+            line-height: 36px;
+            background-color: #fff;
+        }
+        #content {
+            margin: 1em 0;
+            text-align: center;
+        }
+        #content section {
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 1em;
+            font-size: 0.875em;
+        }
+        #content section h2 {
+            margin: 1em 0;
+        }
+        #content section>p {
+            margin: 1em 0;
+        }
+        #content section ul {
+            list-style: none;
+            overflow: hidden;
+        }
+        #content section ul li {
+            width: 30%;
+            float: left;
+            margin: 0 1.5%;;
+        }
+        #content section ul li img {
+            width: 100%;
+        }
+        #content section ul li p {
+            text-align: left;
+        }
+        footer {
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 760px) {
+            /* html {
+                font-size: 20px;
+            } */
+            body {
+                background-color: pink;
+            }
+            #wrap {
+                width: 90%;
+            }
+            #wrap img {
+                width: 100%;
+            }
+            header {
+                font-size: 0.5em;
+            }
+            header ul {
+                font-size: 4em;
+            }
+            header ul li {
+                font-size: 1em;
+            }
+            #content section ul li {
+                width: 100%;
+                float: none;
+                margin: 0;
+                overflow: hidden;
+                border: 1px solid #333;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+            #content section ul li img {
+                width: 26%;
+                float: left;
+            }
+            #content section ul li p {
+                width: 70%;
+                float: right;
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+            html {
+                font-size: 40px;
+            }
+            body {
+                background-color: skyblue;
+            }
+            header ul li {
+                width: 50%;
+            }
+            #content section ul li img {
+                width: 100%;
+                float: none;
+                margin-bottom: 10px;
+            }
+            #content section ul li p {
+                width: 100%;
+                float:none
+            }
+        }
+
+    </style>
+</head>
+<body>
+  <div id="wrap">
+    <header>
+     <h1>반응형 기본 레이아웃</h1>  
+     <ul>
+         <li>menu01</li>
+         <li>menu02</li>
+         <li>menu03</li>
+         <li>menu04</li>
+     </ul> 
+    </header>
+    <div id="content">
+     <section>
+      <h2>본문단</h2>   
+      <img src="test.jpg" alt="">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam harum fugit voluptate quaerat natus nesciunt expedita, eligendi voluptas omnis asperiores cumque repellendus numquam eaque nulla vitae consequuntur dicta aliquid qui!</p>
+     </section>   
+     <section>
+      <ul>
+        <li>
+            <img src="test.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, iusto quisquam sunt laboriosam magnam reiciendis asperiores eaque, cumque porro a facilis sint minima doloremque reprehenderit itaque molestiae rem mollitia. Voluptates.</p>
+        </li>
+        <li>
+            <img src="test.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, iusto quisquam sunt laboriosam magnam reiciendis asperiores eaque, cumque porro a facilis sint minima doloremque reprehenderit itaque molestiae rem mollitia. Voluptates.</p>
+        </li>
+        <li>
+            <img src="test.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, iusto quisquam sunt laboriosam magnam reiciendis asperiores eaque, cumque porro a facilis sint minima doloremque reprehenderit itaque molestiae rem mollitia. Voluptates.</p>
+        </li>
+      </ul>   
+     </section>   
+    </div>
+    <footer>copyright</footer>
+  </div>  
+</body>
+</html>
